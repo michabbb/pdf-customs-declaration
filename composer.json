@@ -1,0 +1,38 @@
+{
+  "name": "macropage/pdf-customs-declaration",
+  "description": "Create a customs declaration PDF",
+  "license" : "MIT",
+  "config": {
+    "platform": {
+      "php": "5.6.24"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php"        : ">=5.6",
+    "tecnick.com/tcpdf": "dev-master"
+  },
+
+  "autoload": {
+    "classmap": ["vendor/tecnick.com/tcpdf/","inc/"]
+  },
+
+  "repositories": [
+    {
+      "type" : "package",
+      "package": {
+        "name": "tecnick.com/tcpdf",
+        "version": "dev-master",
+        "dist" : {
+          "url": "https://github.com/michabbb/TCPDF/archive/master.zip",
+          "type": "zip"
+        }
+      }
+    }
+  ],
+  "scripts": {
+    "deploy": "composer update --prefer-dist && rm vendor/tecnick.com/tcpdf/examples/ -R -f && composer dumpautoload -o"
+  }
+
+}
