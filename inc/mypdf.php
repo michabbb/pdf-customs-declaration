@@ -16,9 +16,11 @@ class mypdf extends TCPDF {
 
 	//Page header
 	public function Header() {
+		//use $pdfconfig here
 	}
 
 	// Page footer
 	public function Footer() {
+		//use $pdfconfig here
 	}
 }
